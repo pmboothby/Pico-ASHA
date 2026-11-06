@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {
+    background-color: whitesmoke;
+    font-family: sans-serif;
+    margin: 1em;
+  }
+  h1 {color: crimson;}
+  p  {color: black;}
+  form {
+    margin-bottom: 1.5em;
+  }
+input[type="text"],
+input[type="password"] {
+  font-size: 1em;
+  padding: 0.3em;
+  box-sizing: border-box;
+}
+  input[type="submit"] {
+    font-size: 1em;
+    padding: 0.5em 1em;
+  }
+  </style>
+</head>
+<body>
+  <h1>Pico-ASHA configuration</h1>
+  <p>Current IP address: <!--#ipaddress--></p>
+  <p>Current SSID: <!--#ssid--></p>
+  <p>Current password: <!--#password--></p>
+
+  <form action="/clear.cgi" method="get">
+    <input type="submit" value="Clear saved credentials">
+  </form>
+
+</body>
+</html>
