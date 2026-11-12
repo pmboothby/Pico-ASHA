@@ -4,26 +4,26 @@ if(WIN32)
 else()
     set(USERHOME $ENV{HOME})
 endif()
-set(sdkVersion 2.2.0)
-set(toolchainVersion 14_2_Rel1)
-set(picotoolVersion 2.2.0)
+set(sdkVersion 2.3.1)
+set(toolchainVersion 15_2_Rel1)
+set(picotoolVersion 2.3.1)
 set(picoVscode ${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
 if (EXISTS ${picoVscode})
     include(${picoVscode})
 endif()
 # ====================================================================================
-set(PICO_BOARD pico_w CACHE STRING "Board type")
+set(PICO_BOARD pico2_w CACHE STRING "Board type")
 
 cmake_minimum_required(VERSION 3.13)
 
 # Get External projects here before importing the SDK
 Include(FetchContent)
 
-# TinyUSB 0.20.0
+# TinyUSB 0.21.0
 FetchContent_Declare(
   tinyusb
   GIT_REPOSITORY https://github.com/hathach/tinyusb
-  GIT_TAG        3af1bec1a9161ee8dec29487831f7ac7ade9e189
+  GIT_TAG        0.21.0
 )
 FetchContent_MakeAvailable(tinyusb)
 

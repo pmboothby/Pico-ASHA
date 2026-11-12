@@ -57,7 +57,11 @@ extern "C" int main()
     // Init TinyUSB before stdio init
     board_init();
     // init device stack on configured roothub port
-    tud_init(BOARD_TUD_RHPORT);
+    tusb_rhport_init_t usb_init = {
+        .role  = TUSB_ROLE_DEVICE,
+        .speed = TUSB_SPEED_HIGH
+    };
+    tusb_init(BOARD_TUD_RHPORT, &usb_init);
 
     stdio_init_all();
     sleep_ms(250);
